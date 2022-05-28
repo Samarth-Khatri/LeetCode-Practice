@@ -29,11 +29,20 @@ import java.util.*;
 
 class Solution {
     int binarysearch(int arr[], int n, int k) {
-        int ans = -1;
-        for(int i=0;i<n;++i) {
-            if(arr[i]==k)
-                ans=i;
+        int low=0;
+        int high=n-1;
+        int idx=-1;
+        while(low<=high) {
+            int mid=high+low/2;
+            if(arr[mid]==k) {
+                idx=mid;
+                break;
+            } 
+            else if(arr[mid]>k)
+                high=mid-1;
+            else if(arr[mid]<k)
+                low=mid+1;
         }
-        return ans;
+        return idx;
     }
 }
