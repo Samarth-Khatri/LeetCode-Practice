@@ -15,14 +15,14 @@ class Solution {
     }
 
     public void swap(int[] a, int i, int j) {
-        int temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
+        int temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
     }
 
     public void reverse(int[] a, int i, int j) {
-        while (i < j) 
-            swap(a, i++, j--);
+        while (i<j) 
+            swap(a,i++,j--);
     }
     
 }
