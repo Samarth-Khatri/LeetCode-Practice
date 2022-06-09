@@ -31,7 +31,7 @@ class GFG{
 
 class Solution
 { 
-   // NOT OPTIMIZED
+   // NOT OPTIMIZED O(N^2)
    int celebrity(int arr[][], int n) {
         int pc=-1;
         for(int i=0;i<n;i++) {
@@ -51,11 +51,10 @@ class Solution
         }
         return -1;
    }
-   public static boolean seccheck(int[][]arr,int c)
-   {
+   public static boolean seccheck(int[][]arr,int c) {
        for(int j=0;j<arr.length;j++) {
            if(j==c)
-            continue;
+                continue;
            else
                if(arr[j][c]!=1)
                     return false;
