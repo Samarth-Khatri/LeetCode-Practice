@@ -1,6 +1,6 @@
 class Solution {
     public int minOperations(int[] nums, int x) {
-        // Approach -> Find subarray with arraySum-x
+        // Approach -> Find subarray with sum = arraySum - x
         int sum = 0;
         for (int num: nums) 
             sum += num;
