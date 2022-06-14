@@ -1,17 +1,17 @@
 class Solution {
     // RECURSIVE APPROACH -> TLE
-//     public int minDistance(String word1, String word2) {
-//         return word1.length() + word2.length() - (2 * lcs(word1, 0, word2, 0));
-//     }
+    public int minDistance(String word1, String word2) {
+        return word1.length() + word2.length() - (2 * lcs(word1, 0, word2, 0));
+    }
 
-//     public int lcs(String a, int i, String b, int j) {
-//         if(i==a.length() || j==b.length()) 
-//             return 0;
-//         if(a.charAt(i)==b.charAt(j)) {
-//             return 1 + lcs(a,i+1,b,j+1);
-//         } else 
-//             return Math.max(lcs(a,i,b,j+1), lcs(a,i+1,b,j));
-//     }
+    public int lcs(String a, int i, String b, int j) {
+        if(i==a.length() || j==b.length()) 
+            return 0;
+        if(a.charAt(i)==b.charAt(j)) {
+            return 1 + lcs(a,i+1,b,j+1);
+        } else 
+            return Math.max(lcs(a,i,b,j+1), lcs(a,i+1,b,j));
+    }
     
     // DP APPROACH 
     public int minDistance(String word1, String word2) {
