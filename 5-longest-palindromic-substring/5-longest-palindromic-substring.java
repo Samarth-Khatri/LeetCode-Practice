@@ -1,29 +1,29 @@
 class Solution {
     // BRUTE FORCE -> TLE
-//     public String longestPalindrome(String s) {
-//         String ans = "";
-//         int len = 0;
-//         for(int i=0;i<s.length();i++) {
-// 		    for(int j=i+1;j<=s.length();j++) {
-// 			    String sub = s.substring(i,j);
-// 			    if(isPalindrome(sub)==true) 
-//                     if(sub.length()>=ans.length())
-//                         ans = sub;
-//             }
-// 		}
-//         return ans;
-//     }
+    public String longestPalindrome(String s) {
+        String ans = "";
+        int len = 0;
+        for(int i=0;i<s.length();i++) {
+		    for(int j=i+1;j<=s.length();j++) {
+			    String sub = s.substring(i,j);
+			    if(isPalindrome(sub)==true) 
+                    if(sub.length()>=ans.length())
+                        ans = sub;
+            }
+		}
+        return ans;
+    }
     
-//     public static boolean isPalindrome(String ans){
-// 		int i = 0;
-// 		int j = ans.length()-1;
-// 		while(j>i) {
-// 			if(ans.charAt(i) != ans.charAt(j))
-// 				return false;
-// 			i++; j--;
-// 		}
-// 		return true;
-// 	}
+    public static boolean isPalindrome(String ans){
+		int i = 0;
+		int j = ans.length()-1;
+		while(j>i) {
+			if(ans.charAt(i) != ans.charAt(j))
+				return false;
+			i++; j--;
+		}
+		return true;
+	}
     
     // BETTER OPTIMIZED
     public String longestPalindrome(String s) {
