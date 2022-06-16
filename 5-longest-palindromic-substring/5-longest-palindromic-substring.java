@@ -25,27 +25,32 @@ class Solution {
 		return true;
 	}
     
-    // BETTER OPTIMIZED
+// BETTER OPTIMIZED -> EXPAND AROND CENTER
     public String longestPalindrome(String s) {
-        if(s==null || s.length()<1)
-            return " ";
-        int start=0, end=0;
-        for(int i=0;i<s.length();++i) {
-            int len1 = check(s,i,i);
-            int len2 = check(s,i,i+1);
-            int flen = Math.max(len1,len2);
-            if(flen>end-start) {
-                start=i-(flen-1)/2;
-                end=i+flen/2;
-            }
+        if (s.length()<=1) 
+            return s;
+
+        String result = "";
+        for (int i=0;i<s.length();++i) {
+            String odd = expandRange(s,i,i);
+            if (odd.length() > result.length()) 
+                result = odd;
+
+            String even = expandRange(s,i,i+1);
+            if (even.length() > result.length()) 
+                result = even;
         }
-        return s.substring(start,end+1);
+        return result;
     }
-    
-    public int check(String s, int l, int r) {
-        while(l>=0 && r<s.length() && s.charAt(l)==s.charAt(r)) {
-            l--; r++;
+
+
+    private String expandRange(String s, int left, int right) {
+
+        String string = s;
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
         }
-        return r-l-1;
+        return string.substring(left + 1, right); 
     }
 }
