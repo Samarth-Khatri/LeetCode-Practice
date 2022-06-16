@@ -32,7 +32,7 @@ class Solution {
 
         String result = "";
         for (int i=0;i<s.length();++i) {
-            String odd = expandRange(s,i,i);
+            String odd = expandRange(s,i-1,i+1);
             if (odd.length() > result.length()) 
                 result = odd;
 
