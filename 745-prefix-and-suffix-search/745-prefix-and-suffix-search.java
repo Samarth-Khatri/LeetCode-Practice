@@ -3,20 +3,24 @@ class WordFilter {
 
     public WordFilter(String[] words) {
         mp = new HashMap<>();
-        for (int i=0;i<words.length;++i) 
-            for (int j=0;j<words[i].length();++j) {
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words[i].length(); j++) {
+
                 String prefix = words[i].substring(0, j + 1);
-                for (int k=words[i].length()-1;k>-1;--k) {
+
+                for (int k = words[i].length() - 1; k > -1; k--) {
+
                     String suffix = words[i].substring(k);
-                    mp.put(prefix +"#"+suffix,i);
+                    mp.put(prefix + "#" + suffix, i);
                 }
             }
+        }
     }
 
     public int f(String prefix, String suffix) {
-        return mp.getOrDefault(prefix+"#"+suffix,-1);
+  
+        return mp.getOrDefault(prefix + "#" + suffix, -1);
     }
-    
 }
 
 /**
