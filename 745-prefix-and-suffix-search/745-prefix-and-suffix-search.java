@@ -15,7 +15,6 @@ class WordFilter {
     }
 
     public int f(String prefix, String suffix) {
-  
         return mp.getOrDefault(prefix+"#"+suffix,-1);
     }
 }
