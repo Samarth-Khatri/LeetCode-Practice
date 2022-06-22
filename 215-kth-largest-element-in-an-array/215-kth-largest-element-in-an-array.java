@@ -1,6 +1,7 @@
 class Solution {
     public int findKthLargest(int[] nums, int k) {
-        return quickSelect(nums,0,nums.length - 1, nums.length-k);
+        int len = nums.length;
+        return quickSelect(nums,0,len-1,len-k);
     }
     
     public static int quickSelect(int[] arr, int lo, int hi, int k) {
