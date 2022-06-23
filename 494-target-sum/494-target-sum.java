@@ -7,8 +7,6 @@ class Solution {
             return 1;
         if(N==0) 
             return 0;
-         int ch1 = rres(A,N-1,target-A[N-1]);
-         int ch2 = rres(A,N-1,target+A[N-1]);
-         return ch1+ch2;
+         return rres(A,N-1,target-A[N-1]) + rres(A,N-1,target+A[N-1]);
     }
 }
