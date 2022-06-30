@@ -10,11 +10,8 @@ class Solution {
         // return steps;
         
         // Aproach 2
-        // sort the array
-        Arrays.sort(nums);
-        
-        // two pointer 
-        int i=0, j=nums.length-1, steps=0;
+        Arrays.sort(nums); // sort the array 
+        int i=0, j=nums.length-1, steps=0; // two pointer
         while(i<j) {
             steps += (nums[j]-nums[i]);
             i++; j--;
