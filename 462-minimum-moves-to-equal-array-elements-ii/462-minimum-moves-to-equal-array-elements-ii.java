@@ -1,5 +1,6 @@
 class Solution {
     public int minMoves2(int[] nums) {
+        
         // Approach 1
         Arrays.sort(nums); // sort the array
         int n = nums.length; // find the median
