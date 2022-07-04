@@ -29,6 +29,8 @@ class Solution {
         
         prev.next = (c1!=null ? c1 : c2); // attach prev to the list which is not null
         
-        return dummy.next;
+        ListNode head = dummy.next;
+        dummy.next = null;
+        return head;
     }
 }
