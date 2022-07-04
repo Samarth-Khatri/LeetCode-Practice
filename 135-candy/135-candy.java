@@ -19,7 +19,7 @@ class Solution {
         
         // Merge both sides
         for(int i=0;i<n;++i)
-            candies += Math.max(left[i],right[i]);
+            candies += Math.max(left[i],right[i]); // taking the max candies
         
         return candies;
     }
