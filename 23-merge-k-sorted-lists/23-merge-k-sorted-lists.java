@@ -9,13 +9,31 @@
  * }
  */
 class Solution {
+    
+    // Approac 1 -> Bakwas Approach - Slow
+    // public ListNode mergeKLists(ListNode[] lists) {
+    //     if(lists.length==0) 
+    //         return null;
+    //     ListNode ans = null; // new list 
+    //     for(ListNode head:lists) // iterating through list array
+    //         ans = mergeTwoLists(ans,head); // merging ans list and next list in array
+    //     return ans;
+    // }
+    
+    // Approach 2 -> Divide and Conquer
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists.length==0) 
             return null;
-        ListNode ans = null; // new list 
-        for(ListNode head:lists) // iterating through list array
-            ans = mergeTwoLists(ans,head); // merging ans list and next list in array
-        return ans;
+        return mergeKL(lists,0,lists.length-1);
+    }
+    
+    public ListNode mergeKL(ListNode[] lists, int si, int ei) {
+        if(si==ei)
+            return lists[si];
+        int mid = (si+ei)/2;
+        ListNode l1 = mergeKL(lists,si,mid);
+        ListNode l2 = mergeKL(lists,mid+1,ei);
+        return mergeTwoLists(l1,l2);
     }
     
      public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
