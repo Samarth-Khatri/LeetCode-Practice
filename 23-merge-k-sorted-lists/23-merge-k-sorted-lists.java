@@ -20,6 +20,7 @@ class Solution {
     //     return ans;
     // }
     
+    
     // Approach 2 -> Divide and Conquer
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists.length==0) 
