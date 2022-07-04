@@ -11,14 +11,14 @@
 class Solution {
     
     // Approac 1 -> Bakwas Approach - Slow
-    // public ListNode mergeKLists(ListNode[] lists) {
-    //     if(lists.length==0) 
-    //         return null;
-    //     ListNode ans = null; // new list 
-    //     for(ListNode head:lists) // iterating through list array
-    //         ans = mergeTwoLists(ans,head); // merging ans list and next list in array
-    //     return ans;
-    // }
+    public ListNode mergeKLists(ListNode[] lists) {
+        if(lists.length==0) 
+            return null;
+        ListNode ans = null; // new list 
+        for(ListNode head:lists) // iterating through list array
+            ans = mergeTwoLists(ans,head); // merging ans list and next list in array
+        return ans;
+    }
     
     
     // Approach 2 -> Divide and Conquer
