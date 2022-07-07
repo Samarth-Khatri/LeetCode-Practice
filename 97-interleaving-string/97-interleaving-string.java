@@ -1,26 +1,26 @@
 class Solution {
     
     // Backtracking Solution -> TLE
-//     public boolean isInterleave(String s1, String s2, String s3) {
-//         if(s1.length() + s2.length() != s3.length())
-//             return false;
-//         return rres(s1,s2,s3,0,0,0);
-//     }
+    public boolean isInterleave(String s1, String s2, String s3) {
+        if(s1.length() + s2.length() != s3.length())
+            return false;
+        return rres(s1,s2,s3,0,0,0);
+    }
     
-//     private boolean rres(String s1, String s2, String s3, int i, int j, int k) {
-//         if(k==s3.length())
-//             return true;
+    private boolean rres(String s1, String s2, String s3, int i, int j, int k) {
+        if(k==s3.length())
+            return true;
         
-//         if(i<s1.length() && s1.charAt(i)==s3.charAt(k))
-//             if(rres(s1,s2,s3,i+1,j,k+1))
-//                 return true;
+        if(i<s1.length() && s1.charAt(i)==s3.charAt(k))
+            if(rres(s1,s2,s3,i+1,j,k+1))
+                return true;
         
-//         if(j<s2.length() && s2.charAt(j)==s3.charAt(k))
-//             if(rres(s1,s2,s3,i,j+1,k+1))
-//                 return true;
+        if(j<s2.length() && s2.charAt(j)==s3.charAt(k))
+            if(rres(s1,s2,s3,i,j+1,k+1))
+                return true;
         
-//         return false;
-//     }
+        return false;
+    }
     
     // DP Approach with 2 pointers only
     public boolean isInterleave(String s1, String s2, String s3) {
