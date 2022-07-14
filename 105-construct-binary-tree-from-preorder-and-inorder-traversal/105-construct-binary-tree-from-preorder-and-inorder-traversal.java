@@ -34,8 +34,8 @@ class Solution {
         int colse = idx-isi;
         TreeNode node = new TreeNode(preorder[psi]);
         
-        node.left = rBuildTree(preorder,psi+1,psi+colse,inorder,isi,idx-1);
-        node.right = rBuildTree(preorder,psi+colse+1,pei,inorder,idx+1,iei);
+        node.left = rBuildTree(preorder,psi+1,psi+colse,inorder,isi,idx-1); // left subtree call
+        node.right = rBuildTree(preorder,psi+colse+1,pei,inorder,idx+1,iei); // right subtree call
             
         return node;
     }
