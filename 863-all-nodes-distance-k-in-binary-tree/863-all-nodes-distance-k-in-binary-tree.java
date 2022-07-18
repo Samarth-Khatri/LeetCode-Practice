@@ -8,8 +8,6 @@
  * }
  */
 class Solution {
-    List<Integer> ans = new ArrayList<>();
-
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
         List<TreeNode> n2rpath = nodeToRootPath(root, target.val);
         List<Integer> ans = new ArrayList<>();
