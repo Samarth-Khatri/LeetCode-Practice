@@ -23,7 +23,8 @@ class Solution {
 
         if(root.left==null && root.right==null && root.val==target)  
             return null;        
-        else 
+        
+         else 
             return root;
     }
 }
