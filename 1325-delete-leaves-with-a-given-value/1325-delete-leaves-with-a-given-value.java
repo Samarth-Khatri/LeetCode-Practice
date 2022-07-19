@@ -14,17 +14,17 @@
  * }
  */
 class Solution {
-     public TreeNode removeLeafNodes(TreeNode root, int target) {
-        if(root==null)  
+     public TreeNode removeLeafNodes(TreeNode node, int target) {
+        if(node==null)  
             return null;
 
-        root.left = removeLeafNodes(root.left,target);
-        root.right = removeLeafNodes(root.right,target);
+        node.left = removeLeafNodes(node.left,target);
+        node.right = removeLeafNodes(node.right,target);
 
-        if(root.left==null && root.right==null && root.val==target)  
+        if(node.left==null && node.right==null && node.val==target)  
             return null;        
         
          else 
-            return root;
+            return node;
     }
 }
