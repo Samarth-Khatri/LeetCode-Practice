@@ -21,6 +21,7 @@ class Solution {
         
     }
     
+    
     // Approach 2 -> Using HashSet
     public int longestConsecutive(int[] nums) {
         if(nums.length<2) 
@@ -38,5 +39,40 @@ class Solution {
                 lcs = Math.max(lcs,cnt); // max of count and prev longest consecutive subsequence
             }
         return lcs;
+    }
+    
+    
+    // Approach 3 -> Using HashMap
+    public int longestConsecutive(int[] arr) {
+        HashMap<Integer, Boolean> map = new HashMap<>();
+        for(int val : arr)
+            map.put(val, true);
+
+        for(int val : arr)
+            if(map.containsKey(val-1))
+                map.put(val, false);
+
+        int msp = 0; // max starting point
+        int mlen = 0; // max length
+        for(int val : arr) {
+            if(map.get(val)) {
+                int tsp = val; // temp sp
+                int tlen = 1; // temp length
+
+                while(map.containsKey(tsp+tlen)) // increasing length
+                    tlen++;
+
+                if(tlen > mlen) { // updating maximums
+                    mlen = tlen;
+                    msp = tsp;
+                }
+            }
+        }
+        
+        int []ans = new int[mlen];
+        for(int i=0;i<mlen;++i)
+            ans[i] = msp + i;
+        
+        return ans.length;
     }
 }
