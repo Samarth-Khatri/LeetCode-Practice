@@ -14,6 +14,8 @@
  * }
  */
 class Solution {
+    
+    // Approach 1 -> Tc = O(N), Sc = O(Height)
     // Same as Linearize a GT into LinkedList
     public void flatten(TreeNode root) {
         if (root == null) // base case 
