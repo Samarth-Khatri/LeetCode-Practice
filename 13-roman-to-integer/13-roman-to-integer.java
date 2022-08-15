@@ -2,7 +2,7 @@ class Solution {
     public int romanToInt(String s) {
         int res = 0;
         char prev = ' ';
-        for(byte i=0;i<s.length();++i) {
+        for(int i=0;i<s.length();++i) {
             char ch = s.charAt(i);
             res += getValue(ch, prev);
             prev = ch;
