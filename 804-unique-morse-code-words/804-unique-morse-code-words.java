@@ -28,6 +28,7 @@ class Solution {
         map.put('x', "-..-");
         map.put('y', "-.--");
         map.put('z', "--..");
+        
         HashSet<String> set = new HashSet<>();
         int cnt = 0;
         for (String word : words) {
