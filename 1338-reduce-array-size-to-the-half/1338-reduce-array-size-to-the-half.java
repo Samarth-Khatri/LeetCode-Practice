@@ -10,13 +10,13 @@ class Solution {
         List<Integer> list = new ArrayList<>(map.values());
         Collections.sort(list, Collections.reverseOrder());
         
-        int reqSize = arr.length/2, currSize = 0, cnt = 0;
+        int reqSize = arr.length/2, currSize = 0, count = 0;
         
         while(currSize < reqSize) {
             currSize += list.remove(0);
-            cnt++;
+            count++;
         }
 
-        return cnt;
+        return count;
     }
 }
