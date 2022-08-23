@@ -10,7 +10,7 @@ class Solution {
         for (int i = n - 1; i > 0; i--) {
             for (int j = 0; j < list.size() - 1; j++) 
                 list.set(j, (list.get(j) + list.get(j + 1)) % 10);
-            n = n - 1;
+            n--;
             if (list.size() > 2) 
                 list.remove(list.size() - 1);
         }
