@@ -5,6 +5,7 @@ class Solution {
         boolean pacificVisited[][] = new boolean[heights.length][heights[0].length];
         boolean atlanticVisited[][] = new boolean[heights.length][heights[0].length];
         
+        // DFS
         for(int i = 0; i < heights.length; ++i)
             dfs(heights, i, 0, heights[i][0], pacificVisited);
         
@@ -19,7 +20,7 @@ class Solution {
         for(int i = 0; i < heights[0].length ; ++i)
             dfs(heights, heights.length-1, i, heights[heights.length-1][i], atlanticVisited);
         
-        
+        // Result
         for(int i = 0; i < heights.length; ++i)
             for(int j = 0; j < heights[0].length; ++j)
                 if(pacificVisited[i][j] && atlanticVisited[i][j])
