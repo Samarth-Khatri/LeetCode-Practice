@@ -28,7 +28,7 @@ class Solution {
             return false;
         sum += node.val;
         if (node.left == null && node.right == null) 
-            return sum == target ? true : false; 
+            return sum == target;
         else return hasEqualSum(node.left, sum) || hasEqualSum(node.right, sum);
     }
 }
