@@ -1,32 +1,32 @@
 class MyStack {
-    Queue<Integer> queue;
+    Queue<Integer> que;
 
     public MyStack() {
-        queue = new LinkedList<Integer>();
+        que = new LinkedList<Integer>();
     }
 
     public void push(int val) {
-        if (queue.size() == 0) queue.add(val);
+        if (que.size() == 0) que.add(val);
         else {
-            queue.add(val);
-            int len = queue.size() - 1;
+            que.add(val);
+            int len = que.size() - 1;
             for (int i = 1; i <= len; ++i) 
-                queue.add(queue.poll());
+                que.add(que.poll());
         }
     }
 
     public int pop() {
-        if (queue.size() == 0) return -1;
-        else return queue.poll();
+        if (que.size() == 0) return -1;
+        else return que.poll();
     }
 
     public int top() {
-        if (queue.size() == 0) return -1;
-        else return queue.peek();
+        if (que.size() == 0) return -1;
+        else return que.peek();
     }
 
     public boolean empty() {
-        return queue.size() == 0;
+        return que.size() == 0;
     }
 }
 
