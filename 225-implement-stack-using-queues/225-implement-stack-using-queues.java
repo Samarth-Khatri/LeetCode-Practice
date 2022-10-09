@@ -1,35 +1,39 @@
 class MyStack {
-    Queue<Integer> que;
+    Queue<Integer> mainQ;
+    Queue<Integer> helperQ;
 
     public MyStack() {
-        que = new LinkedList<Integer>();
+        mainQ = new ArrayDeque<>();
+        helperQ = new ArrayDeque<>();
     }
 
     public void push(int val) {
-        if (que.size() == 0) que.add(val);
-        else {
-            que.add(val);
-            int len = que.size() - 1;
-            for (int i = 1; i <= len; ++i) 
-                que.add(que.poll());
-        }
+        mainQ.add(val);
     }
 
     public int pop() {
-        if (que.size() == 0) return -1;
-        else return que.poll();
+        while (mainQ.size() != 1) 
+            helperQ.add(mainQ.poll());
+        int rem = mainQ.poll();
+        mainQ = helperQ;
+        helperQ = new ArrayDeque<>();
+        return rem;
     }
 
     public int top() {
-        if (que.size() == 0) return -1;
-        else return que.peek();
+        while (mainQ.size() != 1) 
+            helperQ.add(mainQ.poll());
+        int rem = mainQ.poll();
+        helperQ.add(rem);
+        mainQ = helperQ;
+        helperQ = new ArrayDeque<>();
+        return rem;
     }
 
     public boolean empty() {
-        return que.size() == 0;
+        return mainQ.size() == 0;
     }
 }
-
 /**
  * Your MyStack object will be instantiated and called as such:
  * MyStack obj = new MyStack();
