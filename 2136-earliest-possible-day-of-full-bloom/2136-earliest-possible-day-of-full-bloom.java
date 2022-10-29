@@ -6,7 +6,7 @@ class Solution {
             arr[i][0] = plantTime[i];
             arr[i][1] = growTime[i];
         }
-        Arrays.sort(arr, (a, b) -> (b[1] - a[1]));
+        Arrays.sort(arr, (a, b) -> (b[1] - a[1])); // growtime in descending 
         int max = 0;
         int plant = 0;
         for (int i = 0; i < arr.length; ++i) {
